@@ -28,21 +28,6 @@ RUN php /usr/bin/composer install
 # COPY /site /var/www/html
 COPY . /var/www/html
 
-RUN echo "<VirtualHost *:80>" >> /etc/apache2/sites-available/myapp.conf \
-    && echo "    ServerName symfony.test" >> /etc/apache2/sites-available/myapp.conf \
-    && echo "    DocumentRoot /var/www/html/project/public" >> /etc/apache2/sites-available/myapp.conf \
-    && echo "" >> /etc/apache2/sites-available/myapp.conf \
-    && echo "    <Directory /var/www/html/project/public>" >> /etc/apache2/sites-available/myapp.conf \
-    && echo "        AllowOverride All" >> /etc/apache2/sites-available/myapp.conf \
-    && echo "        Order Allow,Deny" >> /etc/apache2/sites-available/myapp.conf \
-    && echo "        Allow from All" >> /etc/apache2/sites-available/myapp.conf \
-    && echo "    </Directory>" >> /etc/apache2/sites-available/myapp.conf \
-    && echo "</VirtualHost>" >> /etc/apache2/sites-available/myapp.conf
-
-
-RUN a2ensite myapp.conf \
-    && a2dissite 000-default.conf
-
 
 
 EXPOSE $PORT
