@@ -24,7 +24,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 RUN php /usr/bin/composer install 
 
 # Copies your code to the image
-COPY /site /var/www/html
+# COPY /site /var/www/html
+COPY . /var/www/html
 
 
 
