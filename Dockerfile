@@ -26,6 +26,8 @@ RUN php /usr/bin/composer install
 
 
 # Copies your code to the image
+COPY /apache/apache2.conf /etc/apache2
+
 # COPY /site /var/www/html
 COPY . /var/www/html
 
