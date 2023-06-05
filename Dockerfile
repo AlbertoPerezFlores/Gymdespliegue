@@ -72,7 +72,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 RUN composer install
 
 
-
 #RUN  composer require symfony/apache-pack
 
 # Copies your code to the image
