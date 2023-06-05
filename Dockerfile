@@ -78,7 +78,7 @@ RUN php /usr/bin/composer install
 COPY /apache/apache2.conf /etc/apache2
 
 # Copies your code to the image
-COPY /site /var/www/html
+COPY . /var/www/html
 
 
 EXPOSE $PORT
