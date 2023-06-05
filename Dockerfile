@@ -2,9 +2,6 @@
 
 FROM php:7.4-apache
 
-RUN docker stop $(docker ps -aq)
-RUN docker rm $(docker ps -aq)
-RUN docker rmi $(docker images -q)
 
 
 RUN apt update && apt install -y git 
