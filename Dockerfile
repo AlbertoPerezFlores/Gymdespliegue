@@ -51,7 +51,7 @@ RUN apt update && apt install -y git
 WORKDIR /var/www/html
 
 
-RUN git clone https://github.com/AlbertoPerezFlores/polideportivo.git .
+RUN git clone https://github.com/picarenlamina/symfony_blob.git .
 
 RUN chown -R www-data:www-data /var/www/html
 
@@ -65,9 +65,6 @@ RUN apt-get update && apt-get install -y \
     unzip
 
 
-# Copies your code to the image
-COPY . /var/www/html
-
 #instalar composer 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && chmod +x /usr/bin/composer
 
@@ -80,7 +77,8 @@ RUN php /usr/bin/composer install
 # Copies your code to the image
 COPY /apache/apache2.conf /etc/apache2
 
-
+# Copies your code to the image
+COPY . /var/www/html
 
 
 EXPOSE $PORT
