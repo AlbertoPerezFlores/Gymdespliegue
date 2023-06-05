@@ -51,7 +51,7 @@ RUN apt update && apt install -y git
 WORKDIR /var/www/html
 
 
-RUN git clone https://github.com/picarenlamina/symfony_blob.git .
+RUN git clone https://github.com/AlbertoPerezFlores/polideportivo.git .
 
 RUN chown -R www-data:www-data /var/www/html
 
