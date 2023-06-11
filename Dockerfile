@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && chmod +x /usr/bin/composer
 
 # RUN php /usr/bin/composer install 
-RUN composer install
+RUN composer update
 
 
 #RUN  composer require symfony/apache-pack
